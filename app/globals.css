@@ -1,0 +1,696 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to TruWell AI brand color palette */
+  --background: #ffffff; /* White - balance, clarity */
+  --foreground: #2c2c2c; /* Charcoal Gray - text, contrast */
+  --card: #e8f9f3; /* Light Mint - fresh, clean background */
+  --card-foreground: #2c2c2c;
+  --popover: #ffffff;
+  --popover-foreground: #2c2c2c;
+  --primary: #1db954; /* Primary Green - health, vitality, safety */
+  --primary-foreground: #ffffff;
+  --secondary: #0077b6; /* Secondary Blue - trust, intelligence */
+  --secondary-foreground: #ffffff;
+  --muted: #e8f9f3;
+  --muted-foreground: #2c2c2c;
+  --accent: #1db954;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e8f9f3;
+  --ring: rgba(29, 185, 84, 0.5);
+  --chart-1: #1db954;
+  --chart-2: #0077b6;
+  --chart-3: #e8f9f3;
+  --chart-4: #2c2c2c;
+  --chart-5: #ffffff;
+  --radius: 0.5rem;
+  --sidebar: #e8f9f3;
+  --sidebar-foreground: #2c2c2c;
+  --sidebar-primary: #1db954;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0077b6;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: rgba(29, 185, 84, 0.5);
+}
+
+.dark {
+  /* Updated dark mode with brand colors */
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #1db954;
+  --primary-foreground: #ffffff;
+  --secondary: #0077b6;
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #a1a1aa;
+  --accent: #1db954;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #2a2a2a;
+  --ring: rgba(29, 185, 84, 0.5);
+  --chart-1: #1db954;
+  --chart-2: #0077b6;
+  --chart-3: #e8f9f3;
+  --chart-4: #2c2c2c;
+  --chart-5: #ffffff;
+  --sidebar: #2a2a2a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #1db954;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0077b6;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #404040;
+  --sidebar-ring: rgba(29, 185, 84, 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom animations for TruWell AI interactions */
+@keyframes scan-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Added advanced scanning animations for hyper-realistic effects */
+@keyframes scan-line {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+}
+
+@keyframes detection-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes progress-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary);
+  }
+}
+
+.scan-pulse {
+  animation: scan-pulse 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.scan-line {
+  animation: scan-line 2s ease-in-out infinite;
+}
+
+.detection-pulse {
+  animation: detection-pulse 1.5s ease-in-out infinite;
+}
+
+.progress-glow {
+  animation: progress-glow 2s ease-in-out infinite;
+}
+
+/* Added advanced hover animations and micro-interactions */
+@keyframes nav-underline {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@keyframes logo-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(29, 185, 84, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(29, 185, 84, 0.6));
+  }
+}
+
+@keyframes button-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(29, 185, 84, 0);
+  }
+}
+
+@keyframes card-lift {
+  from {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  to {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+@keyframes icon-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Added utility classes for hover animations */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.logo-hover {
+  transition: all 0.3s ease;
+}
+
+.logo-hover:hover {
+  animation: logo-glow 2s ease-in-out infinite;
+}
+
+.button-hover {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button-hover:hover::before {
+  left: 100%;
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(29, 185, 84, 0.3);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  animation: card-lift 0.4s ease forwards;
+}
+
+.icon-hover {
+  transition: all 0.3s ease;
+}
+
+.icon-hover:hover {
+  animation: icon-bounce 0.6s ease;
+  color: #1db954;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+
+/* Added mobile touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  .button-hover:active {
+    transform: scale(0.95);
+  }
+
+  .card-hover:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Added brand-specific utility classes */
+.text-truwell-green {
+  color: #1db954;
+}
+
+.text-truwell-blue {
+  color: #0077b6;
+}
+
+.text-truwell-gray {
+  color: #2c2c2c;
+}
+
+.bg-truwell-green {
+  background-color: #1db954;
+}
+
+.bg-truwell-blue {
+  background-color: #0077b6;
+}
+
+.bg-truwell-mint {
+  background-color: #e8f9f3;
+}
+
+.bg-truwell-gray {
+  background-color: #2c2c2c;
+}
+
+.border-truwell-green {
+  border-color: #1db954;
+}
+
+.border-truwell-blue {
+  border-color: #0077b6;
+}
+
+.hover\:bg-truwell-green:hover {
+  background-color: #1db954;
+}
+
+.hover\:bg-truwell-blue:hover {
+  background-color: #0077b6;
+}
+
+.hover\:text-truwell-green:hover {
+  color: #1db954;
+}
+
+.hover\:text-truwell-blue:hover {
+  color: #0077b6;
+}
+
+/* Added hover-glow animation for cards and interactive elements */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(29, 185, 84, 0.2), 0 0 10px rgba(29, 185, 84, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.4), 0 0 30px rgba(29, 185, 84, 0.2), 0 0 40px rgba(29, 185, 84, 0.1);
+  }
+}
+
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.3), 0 0 30px rgba(29, 185, 84, 0.2);
+}
+
+/* Added secondary color glow variant */
+.hover-glow-secondary {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow-secondary:hover {
+  box-shadow: 0 0 20px rgba(0, 119, 182, 0.3), 0 0 30px rgba(0, 119, 182, 0.2);
+}
+
+/* Added mint color alias for consistency */
+.bg-mint {
+  background-color: #e8f9f3;
+}
+
+.text-charcoal {
+  color: #2c2c2c;
+}
+
+/* Added dynamic background animations */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float-medium {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 40px) scale(1.05);
+  }
+}
+
+@keyframes float-fast {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  50% {
+    transform: translate(-30px, 10px) scale(0.95);
+  }
+  75% {
+    transform: translate(10px, 30px) scale(1.05);
+  }
+}
+
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 10s ease-in-out infinite;
+}
+
+.animate-gradient-rotate {
+  animation: gradient-rotate 30s linear infinite;
+}
+
+/* Added text-specific hover animations for hero heading */
+@keyframes text-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.3), 0 0 20px rgba(29, 185, 84, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(29, 185, 84, 0.6), 0 0 40px rgba(29, 185, 84, 0.4), 0 0 60px rgba(29, 185, 84, 0.2);
+  }
+}
+
+@keyframes text-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes letter-bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+/* Added utility classes for text hover effects */
+.text-hover-glow {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.text-hover-glow:hover {
+  animation: text-glow 1.5s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.text-hover-float {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.text-hover-float:hover {
+  animation: text-float 0.6s ease-in-out;
+  color: #1db954;
+}
+
+.text-hover-gradient {
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: inline-block;
+  background: linear-gradient(90deg, #1db954, #0077b6, #1db954);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-hover-gradient:hover {
+  animation: gradient-flow 2s ease infinite;
+  transform: scale(1.08);
+}
+
+.text-hover-bounce {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.text-hover-bounce:hover {
+  animation: letter-bounce 0.5s ease;
+  color: #0077b6;
+}
